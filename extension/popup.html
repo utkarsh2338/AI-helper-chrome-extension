@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contextly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 320px;
+            min-height: 200px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #020617);
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .status {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .status.connected {
+            border-left: 4px solid #10b981;
+        }
+
+        .status.disconnected {
+            border-left: 4px solid #ef4444;
+        }
+
+        .status-text {
+            font-size: 0.9rem;
+            color: #e5e7eb;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+
+        .status.connected .status-indicator {
+            background: #10b981;
+        }
+
+        .status.disconnected .status-indicator {
+            background: #ef4444;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+
+        .instructions {
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            font-size: 0.8rem;
+            color: #9ca3af;
+            line-height: 1.5;
+        }
+
+        .instructions strong {
+            color: #e5e7eb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>🔮 Contextly</h1>
+        <p>Context-aware AI assistant</p>
+    </div>
+
+    <div id="status" class="status disconnected">
+        <span class="status-indicator"></span>
+        <span class="status-text">Checking connection...</span>
+    </div>
+
+    <button id="openSettings" class="btn btn-primary">
+        ⚙️ Open Settings
+    </button>
+
+    <div class="instructions">
+        <strong>How to use:</strong><br>
+        1. Select any text on a webpage<br>
+        2. Click the "Ask Shukla" button<br>
+        3. View the AI response in the dashboard
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

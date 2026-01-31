@@ -1,5 +1,18 @@
 {
-  "dependencies": {
-    "@google/generative-ai": "^0.24.1"
-  }
+  "name": "contextly",
+  "version": "1.0.0",
+  "description": "Context-aware AI assistant Chrome extension",
+  "scripts": {
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": [
+    "chrome-extension",
+    "ai",
+    "gemini",
+    "context-aware"
+  ],
+  "author": "",
+  "license": "MIT"
 }
